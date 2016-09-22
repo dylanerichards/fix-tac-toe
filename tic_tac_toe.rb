@@ -8,11 +8,17 @@ end
 def choose_characters
   puts "X or O?"
   @player = gets.chomp
+  # Fix thise case statement such that when the player enters
+  # X, the computer is assigned O. And vice versa.
+  #
+  # If the player chooses neither X nor O, give assign
+  # the computer a character of your choice.
+
   @computer = case @player
-              when "X" then "O"
-              when "O" then "X"
+              when "" then ""
+              when "" then ""
               else
-                "C"
+                ""
               end
 end
 
@@ -32,6 +38,8 @@ def play
     @board.display
 
     if @board.winner?
+      # Modify the string below to also display the
+      # name of the winner.
       puts "WINNER!!!"
       puts "Do you want to play again?"
 
